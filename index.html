@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyno Handeler</title>
+  </head>
+  <body>
+    <label>Dyno <input type="text" id="D1Box"> </label>
+    <button onclick="sendMessageWithDyno1()">Send</button>
+
+     <br>
+     <br>
+     <label>Dyno 2 <input type="text" id="D2Box" > </label>
+     <button onclick="sendMessageWithDyno2()">Send</button>
+  </body>
+
+  <script>
+    function sendMessageWithDyno1() {
+        
+      var elem = document.getElementById("D1Box").value;
+      const request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/886681649767673917/18EYTXIkYyGwihowbbio3u4q-xD70u9xGRo6h1qVN4DwRGPB0bmIb0Liwb_pcAgeIWCX");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      const params = {
+       /* username: "My Webhook Name",
+        avatar_url: "", */
+        content: elem
+      }
+
+      request.send(JSON.stringify(params));
+    }
+    function sendMessageWithDyno2() {
+        
+        var elem = document.getElementById("D2Box").value;
+        const request = new XMLHttpRequest();
+        request.open("POST", "https://discord.com/api/webhooks/886681894803112016/BjXo8Z352tQD710gDPfn0tcwCmRTmCxlVtcShKk8Z4ztGoyzU3xf4ez034z0T59g0vTY");
+  
+        request.setRequestHeader('Content-type', 'application/json');
+  
+        const params = {
+          /* username: "My Webhook Name",
+        avatar_url: "", */
+          content: elem
+        }
+  
+        request.send(JSON.stringify(params));
+      }
+  </script>
+</html>
